@@ -7,7 +7,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 
 const config = getDefaultConfig({
   appName: 'Cipher Collaborate AI',
-  projectId: '2ec9743d0d0cd7fb94dee1a7e6d33475',
+  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'your-wallet-connect-project-id',
   chains: [sepolia],
   ssr: false,
 });
