@@ -77,12 +77,10 @@ Create a `.env.local` file in the root directory:
 
 ```env
 NEXT_PUBLIC_CHAIN_ID=11155111
-NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your-wallet-connect-project-id
-NEXT_PUBLIC_INFURA_API_KEY=your-infura-api-key
+NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
+NEXT_PUBLIC_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
 ```
-
-**Important**: Replace the placeholder values with your actual API keys. See [ENVIRONMENT_SETUP.md](./ENVIRONMENT_SETUP.md) for detailed setup instructions.
 
 ## 🏗️ Project Structure
 
@@ -103,8 +101,6 @@ cipher-collaborate-ai/
 │   │   └── Index.tsx        # Main application page
 │   └── main.tsx            # Application entry point
 ├── public/                  # Static assets
-├── DEPLOYMENT.md           # Vercel deployment guide
-├── ENVIRONMENT_SETUP.md    # Environment variables setup guide
 ├── package.json
 ├── vite.config.ts
 ├── tailwind.config.ts

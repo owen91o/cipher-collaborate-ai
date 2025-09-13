@@ -1,77 +1,88 @@
-import { useContract, useContractWrite, useContractRead } from 'wagmi';
+import { useWriteContract, useReadContract } from 'wagmi';
 import { CipherCollaborateAI_ABI, CONTRACT_ADDRESS } from '@/lib/contract';
 
-export const useCipherContract = () => {
-  const contract = useContract({
-    address: CONTRACT_ADDRESS,
-    abi: CipherCollaborateAI_ABI,
-  });
-
-  return contract;
-};
-
 export const useCreateDataset = () => {
-  const { write, isLoading, error } = useContractWrite({
-    address: CONTRACT_ADDRESS,
-    abi: CipherCollaborateAI_ABI,
-    functionName: 'createDataset',
-  });
+  const { writeContract, isPending, error } = useWriteContract();
+
+  const createDataset = async (args: [string, string, string, `0x${string}`, `0x${string}`, `0x${string}`]) => {
+    return writeContract({
+      address: CONTRACT_ADDRESS as `0x${string}`,
+      abi: CipherCollaborateAI_ABI,
+      functionName: 'createDataset',
+      args,
+    });
+  };
 
   return {
-    createDataset: write,
-    isLoading,
+    createDataset,
+    isLoading: isPending,
     error,
   };
 };
 
 export const useContributeToDataset = () => {
-  const { write, isLoading, error } = useContractWrite({
-    address: CONTRACT_ADDRESS,
-    abi: CipherCollaborateAI_ABI,
-    functionName: 'contributeToDataset',
-  });
+  const { writeContract, isPending, error } = useWriteContract();
+
+  const contributeToDataset = async (args: [bigint, `0x${string}`, `0x${string}`, string, `0x${string}`]) => {
+    return writeContract({
+      address: CONTRACT_ADDRESS as `0x${string}`,
+      abi: CipherCollaborateAI_ABI,
+      functionName: 'contributeToDataset',
+      args,
+    });
+  };
 
   return {
-    contributeToDataset: write,
-    isLoading,
+    contributeToDataset,
+    isLoading: isPending,
     error,
   };
 };
 
 export const useStartTrainingSession = () => {
-  const { write, isLoading, error } = useContractWrite({
-    address: CONTRACT_ADDRESS,
-    abi: CipherCollaborateAI_ABI,
-    functionName: 'startTrainingSession',
-  });
+  const { writeContract, isPending, error } = useWriteContract();
+
+  const startTrainingSession = async (args: [bigint, string]) => {
+    return writeContract({
+      address: CONTRACT_ADDRESS as `0x${string}`,
+      abi: CipherCollaborateAI_ABI,
+      functionName: 'startTrainingSession',
+      args,
+    });
+  };
 
   return {
-    startTrainingSession: write,
-    isLoading,
+    startTrainingSession,
+    isLoading: isPending,
     error,
   };
 };
 
 export const useCompleteTrainingSession = () => {
-  const { write, isLoading, error } = useContractWrite({
-    address: CONTRACT_ADDRESS,
-    abi: CipherCollaborateAI_ABI,
-    functionName: 'completeTrainingSession',
-  });
+  const { writeContract, isPending, error } = useWriteContract();
+
+  const completeTrainingSession = async (args: [bigint, `0x${string}`, `0x${string}`, `0x${string}`]) => {
+    return writeContract({
+      address: CONTRACT_ADDRESS as `0x${string}`,
+      abi: CipherCollaborateAI_ABI,
+      functionName: 'completeTrainingSession',
+      args,
+    });
+  };
 
   return {
-    completeTrainingSession: write,
-    isLoading,
+    completeTrainingSession,
+    isLoading: isPending,
     error,
   };
 };
 
 export const useGetDatasetInfo = (datasetId: number) => {
-  const { data, isLoading, error } = useContractRead({
-    address: CONTRACT_ADDRESS,
+  const { data, isLoading, error } = useReadContract({
+    address: CONTRACT_ADDRESS as `0x${string}`,
     abi: CipherCollaborateAI_ABI,
     functionName: 'getDatasetInfo',
-    args: [datasetId],
+    args: [BigInt(datasetId)],
   });
 
   return {
@@ -82,11 +93,11 @@ export const useGetDatasetInfo = (datasetId: number) => {
 };
 
 export const useGetContributorReputation = (address: string) => {
-  const { data, isLoading, error } = useContractRead({
-    address: CONTRACT_ADDRESS,
+  const { data, isLoading, error } = useReadContract({
+    address: CONTRACT_ADDRESS as `0x${string}`,
     abi: CipherCollaborateAI_ABI,
     functionName: 'getContributorReputation',
-    args: [address],
+    args: [address as `0x${string}`],
   });
 
   return {

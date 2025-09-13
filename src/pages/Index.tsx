@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Shield, Database, Zap, Lock, CheckCircle, Users, TrendingUp } from 'lucide-react';
 import { useAccount } from 'wagmi';
+import DatasetCreator from '@/components/DatasetCreator';
 
 const Index = () => {
   const [currentView, setCurrentView] = useState('home');
@@ -198,14 +199,7 @@ const Index = () => {
                   </p>
                 </div>
                 
-                <div className="text-center py-8">
-                  <p className="text-muted-foreground">
-                    Dataset contribution form will be implemented here with FHE integration.
-                  </p>
-                  <Badge variant="outline" className="mt-4">
-                    Coming Soon
-                  </Badge>
-                </div>
+                <DatasetCreator />
               </CardContent>
             </Card>
           )}
@@ -280,6 +274,7 @@ const Index = () => {
       </div>
     </div>
   );
+
 
   switch (currentView) {
     case 'contribute':

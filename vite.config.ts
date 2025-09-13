@@ -6,12 +6,19 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 8080,
+    port: 5173,
   },
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  define: {
+    global: 'globalThis',
+    'process.env': process.env,
+  },
+  optimizeDeps: {
+    include: ['buffer'],
   },
 }));

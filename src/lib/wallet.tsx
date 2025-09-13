@@ -3,12 +3,16 @@ import { getDefaultConfig, RainbowKitProvider, darkTheme } from '@rainbow-me/rai
 import { WagmiProvider } from 'wagmi';
 import { sepolia } from 'wagmi/chains';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { http } from 'viem';
 import '@rainbow-me/rainbowkit/styles.css';
 
 const config = getDefaultConfig({
   appName: 'Cipher Collaborate AI',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'your-wallet-connect-project-id',
+  projectId: '2ec9743d0d0cd7fb94dee1a7e6d33475',
   chains: [sepolia],
+  transports: {
+    [sepolia.id]: http(),
+  },
   ssr: false,
 });
 
