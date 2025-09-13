@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Shield, Database, Zap, Lock, CheckCircle, Users, TrendingUp } from 'lucide-react';
 import { useAccount } from 'wagmi';
 import DatasetCreator from '@/components/DatasetCreator';
+import Logo from '@/components/Logo';
 
 const Index = () => {
   const [currentView, setCurrentView] = useState('home');
@@ -17,15 +18,7 @@ const Index = () => {
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg shadow-lg">
-                <Shield className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">Cipher Collaborate AI</h1>
-                <p className="text-sm text-muted-foreground">Privacy-First AI Training</p>
-              </div>
-            </div>
+            <Logo size="md" showText={true} />
             <ConnectButton />
           </div>
         </div>
@@ -138,15 +131,7 @@ const Index = () => {
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg shadow-lg">
-                <Shield className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">Cipher Collaborate AI</h1>
-                <p className="text-sm text-muted-foreground">Privacy-First AI Training</p>
-              </div>
-            </div>
+            <Logo size="md" showText={true} />
             <div className="flex items-center space-x-4">
               <Button variant="outline" onClick={() => setCurrentView('home')}>
                 Back to Home
@@ -213,15 +198,7 @@ const Index = () => {
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg shadow-lg">
-                <Shield className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">Cipher Collaborate AI</h1>
-                <p className="text-sm text-muted-foreground">Privacy-First AI Training</p>
-              </div>
-            </div>
+            <Logo size="md" showText={true} />
             <div className="flex items-center space-x-4">
               <Button variant="outline" onClick={() => setCurrentView('home')}>
                 Back to Home

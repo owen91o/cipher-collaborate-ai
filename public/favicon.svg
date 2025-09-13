@@ -1,0 +1,40 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9333ea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4338ca;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="neuralPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.3" fill="white" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="32" height="32" rx="8" fill="url(#logoGradient)"/>
+  
+  <!-- Neural network pattern overlay -->
+  <rect width="32" height="32" rx="8" fill="url(#neuralPattern)" opacity="0.2"/>
+  
+  <!-- Main shield icon -->
+  <path d="M16 4L8 8V16C8 20.4183 11.5817 24 16 24C20.4183 24 24 20.4183 24 16V8L16 4Z" 
+        fill="white" 
+        stroke="white" 
+        stroke-width="1.5" 
+        stroke-linejoin="round"/>
+  
+  <!-- Lock icon inside shield -->
+  <rect x="13" y="12" width="6" height="4" rx="1" fill="url(#logoGradient)"/>
+  <path d="M14 12V10C14 8.89543 14.8954 8 16 8C17.1046 8 18 8.89543 18 10V12" 
+        stroke="url(#logoGradient)" 
+        stroke-width="1.5" 
+        stroke-linecap="round"/>
+  
+  <!-- Animated dots for AI/FHE theme -->
+  <circle cx="26" cy="6" r="1.5" fill="#fbbf24" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="6" cy="26" r="1" fill="#10b981" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
